@@ -2,18 +2,22 @@ import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
 import HomeScreen from "./HomeScreen";
 import DetailsScreen from "./DetailsScreen";
 import AllignScreen from "./AllignScreen";
 import ProfileScreen from "./ProfileScreen";
-import Icon from 'react-native-vector-icons/Ionicons';
+import WatchlistScreen from "./WatchlistScreen"
 
+import Icon from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
 const AllignStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
+const WatchlistStack =createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
 const MainTabScreen = () => (
@@ -53,12 +57,22 @@ const MainTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name="Aellign"
+      name="Allign"
       component={AllignStackScreen}
       options={{
         tabBarLabel: 'Allign',
         tabBarIcon: ({ color }) => (
           <Icon name="ios-aperture" color={color} size={26} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Watchlist"
+      component={WatchlistStackScreen}
+      options={{
+        tabBarLabel: 'Allign',
+        tabBarIcon: ({ color }) => (
+          <Icon name="logo-xing" color={color} size={26} />
         ),
       }}
     />
@@ -87,6 +101,25 @@ const HomeStackScreen = ({navigation}) =>(
     </HomeStack.Navigator>
   );
   
+  const WatchlistStackScreen = ({navigation}) =>(
+    <WatchlistStack.Navigator screenOptions={{
+      headerStyle:{
+        backgroundColor:'#009387',
+      },
+      headerTintColor:'#fff',
+      headerTitleStyle:{
+        fontWeight: 'bold'
+      }
+    }}>
+      <WatchlistStack.Screen name="Home" component={WatchlistScreen} options={{
+        headerRight: () =>(
+          <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={()=>navigation.openDrawer()}></Icon.Button>
+        )
+      }}/>
+    </WatchlistStack.Navigator>
+  );
+
+
   const DetailsStackScreen = ({navigation}) =>(
     <DetailsStack.Navigator screenOptions={{
       headerStyle:{
@@ -137,13 +170,16 @@ const HomeStackScreen = ({navigation}) =>(
       }
     }}>
       <ProfileStack.Screen name="Profile" component={ProfileScreen} options={{
+        title:'',
         headerRight: () =>(
           <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={()=>navigation.openDrawer()}></Icon.Button>
-        )
-      }}/>
-    </ProfileStack.Navigator>
+        ),
+        
+      }}
+      />
+      
+      
+     </ProfileStack.Navigator>
   );
 
-
-
-
+  

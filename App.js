@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MainTabScreen from './Screens/MainTabScreen';
+import {DrawerContent} from "./Screens/DrawerContent";
 
 
 
@@ -16,11 +17,11 @@ const Drawer = createDrawerNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={MainTabScreen} />
-        <Drawer.Screen name="Details" component={MainTabScreen} />
+    <Drawer.Navigator drawerPosition="right" drawerContent={props => <DrawerContent {...props} />} >
+        <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
+        {/* <Drawer.Screen name="Details" component={MainTabScreen} />
         <Drawer.Screen name="Allign" component={MainTabScreen} />
-        <Drawer.Screen name="Profile" component={MainTabScreen} />
+        <Drawer.Screen name="Profile" component={MainTabScreen} /> */}
       </Drawer.Navigator>
     </NavigationContainer>
 

@@ -1,24 +1,32 @@
-import React from 'react';
-import { View,Text,Button,StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 
-const DetailsScreen = ({navigation}) => {
+class DetailsScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+
+  render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>DetailsScreen</Text>
-        <Button
-        title='Go to profile screen'
-        onPress={()=>navigation.navigate("Profile")}
-        />
-  
+      <View style={{flex: 1, flexDirection: 'row'}}>
+    <View style={{flex: 1}}>
+      <Text>Symbol</Text>
+    </View>
+    <View style={{flex: 1}}>
+      <Text style={{textAlign: 'middle'}}>LTP</Text>
+    </View>
+    <View style={{flex: 1}}>
+      <Text style={{textAlign: 'right'}}>Chng(%)</Text>
+    </View>
+    <View >
+    
+    
+    </View>
       </View>
     );
-  };
-  export default DetailsScreen;
+  }
+}
 
-  const styles = StyleSheet.create({
-      container:{
-          flex:1,
-          alignItems:'center',
-          justifyContent: 'center'
-      },
-  });
+export default DetailsScreen;
