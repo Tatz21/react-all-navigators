@@ -32,7 +32,7 @@ const MainTabScreen = () => (
       options={{
         tabBarLabel: 'Home',
         tabBarIcon: ({ color }) => (
-          <Icon name="ios-home" color={color} size={26} />
+          <Icon name="ios-person" color={color} size={26} />
         ),
       }}
     />
@@ -52,7 +52,7 @@ const MainTabScreen = () => (
       options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ color }) => (
-          <Icon name="ios-person" color={color} size={26} />
+          <Icon name="ios-home" color={color} size={26} />
         ),
       }}
     />
