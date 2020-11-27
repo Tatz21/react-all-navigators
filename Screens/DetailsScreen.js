@@ -14,11 +14,11 @@ class DetailsScreen extends Component {
     <View style={{flex: 1}}>
       <Text>Symbol</Text>
     </View>
-    <View style={{flex: 1}}>
-      <Text style={{textAlign: 'middle'}}>LTP</Text>
+    <View style={{textAlign: "middle",flex: 1}}>
+      <Text>LTP</Text>
     </View>
-    <View style={{flex: 1}}>
-      <Text style={{textAlign: 'right'}}>Chng(%)</Text>
+    <View style={{textAlign:"right" , flex: 1}}>
+      <Text>Chng(%)</Text>
     </View>
     <View >
     
